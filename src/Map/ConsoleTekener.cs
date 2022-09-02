@@ -9,7 +9,7 @@ namespace Map
         {
             SchrijfOp(t.Locatie, t.Karakter);
         }
-        }
+        
 
         public void SchrijfOp(Coordinaat c, string text)
         {

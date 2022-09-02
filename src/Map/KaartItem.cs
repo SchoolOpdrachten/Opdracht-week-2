@@ -9,7 +9,8 @@ namespace Map
         public string Karakter { get; }
 
         public KaartItem(Kaart k, Coordinaat l, string karakter) {
-            Locatie = l;
+            if (l.x >= 0 && l.y >= 0) Locatie = l;
+            else Locatie = new Coordinaat(0, 0);
             Karakter = karakter;
         }
         public void TekenConsole(ConsoleTekener t)

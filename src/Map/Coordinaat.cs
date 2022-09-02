@@ -13,6 +13,10 @@ namespace Map
             this.y = y;
         }
 
+        public static Coordinaat operator -(Coordinaat c1, Coordinaat c2)
+        {
+            return new Coordinaat(c1.x - c2.x, c1.y - c2.y);
+        }
         public static Coordinaat operator +(Coordinaat c1, Coordinaat c2)
         {
             return new Coordinaat(c1.x + c2.x, c1.y + c2.y);
