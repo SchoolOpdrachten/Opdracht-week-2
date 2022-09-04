@@ -3,6 +3,10 @@ namespace Authenticatie
 {
     class Gast : Gebruiker
     {
+        public Gast(string email, string wachtwoord, string naam) : base(email, wachtwoord, naam)
+        {
+        }
+
         public int Rating { get; set; }
         public int Boete { get; set; }
         public DateTime Geboortedatum { get; set; }

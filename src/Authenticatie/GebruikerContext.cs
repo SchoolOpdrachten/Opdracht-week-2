@@ -1,19 +1,32 @@
 
 namespace Authenticatie
 {
-    class GebruikerContext
+    static class GebruikerContext
     {
-        public static List<Gebruiker> Gebruikers { get; set; }
+        public static List<Gebruiker> Gebruikers
+        {
+            get
+            {
+                if (Gebruikers == null)
+                {
+                    List<Gebruiker> Gebruikers = new List<Gebruiker>();
+                    Gebruikers.Add(new Medewerker("peter@mail.com", "peter", "123"));
+                    Gebruikers.Add(new Gast("peter@gast.com", "peter", "123"));
+                }
+                return Gebruikers;
+            }
+            set { Gebruikers = value; }
+        }
 
-        public Gebruiker GetGebruiker(string email)
+        public static Gebruiker GetGebruiker(string email)
         {
             return Gebruikers.Find(g => g.Email == email);
         }
-        public Gebruiker GetGebruiker(int index)
+        public static Gebruiker GetGebruiker(int index)
         {
             return Gebruikers[index];
         }
-        public void AddGebruiker(Gebruiker gebruiker)
+        public static void AddGebruiker(Gebruiker gebruiker)
         {
             Gebruikers.Add(gebruiker);
         }

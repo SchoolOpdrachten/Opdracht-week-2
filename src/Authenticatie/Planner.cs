@@ -1,7 +1,7 @@
 
 namespace Authenticatie
 {
-    class Planner : Gebruiker
+    class Planner
     {
         public void Plan()
         {
