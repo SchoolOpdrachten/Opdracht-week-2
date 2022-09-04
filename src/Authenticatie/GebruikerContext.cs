@@ -30,5 +30,13 @@ namespace Authenticatie
         {
             Gebruikers.Add(gebruiker);
         }
+        // public static void RemoveGebruiker(Gebruiker gebruiker)
+        // {
+        //     Gebruikers.Remove(gebruiker);
+        // }
+        public static int AantalGebruikers()
+        {
+            return Gebruikers.Count;
+        }
     }
 }

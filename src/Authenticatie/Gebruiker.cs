@@ -7,13 +7,13 @@ namespace Authenticatie
         public string Wachtwoord { get; set; }
         public string Naam { get; set; }
 
-        private bool isGeverifieerd = false;
-
+        private VerificatieToken VerificatieToken;
         public Gebruiker(string email, string wachtwoord, string naam)
         {
             Email = email;
             Wachtwoord = wachtwoord;
             Naam = naam;
+            VerificatieToken = new VerificatieToken(Guid.NewGuid().ToString(), DateTime.Now.AddDays(3));
         }
 
         public bool Geverifieerd()
