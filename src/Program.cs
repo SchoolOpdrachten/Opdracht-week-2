@@ -12,10 +12,6 @@ class PretparkDH
         k.VoegPadToe(p1);
         Pad p2 = new Pad(new Coordinaat(15, 4), new Coordinaat(2, 15));
         k.VoegPadToe(p2);
-        Pad p3 = new Pad(new Coordinaat(10, 4), new Coordinaat(10, 15));
-        k.VoegPadToe(p3);
-        Pad p4 = new Pad(new Coordinaat(10, 4), new Coordinaat(20, 4));
-        k.VoegPadToe(p4);
 
         k.VoegItemToe(new Attractie(k, new Coordinaat(5, 5)));
         k.VoegItemToe(new Attractie(k, new Coordinaat(1, 3)));

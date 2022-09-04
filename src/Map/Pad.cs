@@ -35,12 +35,19 @@ namespace Map
             int dx2 = Math.Abs(dx);
             int dy2 = Math.Abs(dy);
 
+            // for (int i = 0; i < dx2; i++)
+            // {
+            //     t.SchrijfOp(new Coordinaat(x, y), "X");
+            //     x += x_inc;
+            //     y += y_inc;
+            // }
+
             if (dx2 >= dy2)
             {
                 int rem = dx2 / 2;
                 for (int i = 0; i < dx2; i++)
                 {
-                    t.SchrijfOp(new Coordinaat(x, y), "-");
+                    t.SchrijfOp(new Coordinaat(x, y), "X");
                     rem += dy2;
                     if (rem >= dx2)
                     {
@@ -55,7 +62,7 @@ namespace Map
                 int rem = dy2 / 2;
                 for (int i = 0; i < dy2; i++)
                 {
-                    t.SchrijfOp(new Coordinaat(x, y), "|");
+                    t.SchrijfOp(new Coordinaat(x, y), "X");
                     rem += dx2;
                     if (rem >= dy2)
                     {

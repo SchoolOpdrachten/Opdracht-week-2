@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\repos\\PretparkDH\\src\\src.csproj": {}
+    "c:\\repos\\PretparkDH\\src\\src.csproj": {}
   },
   "projects": {
-    "C:\\repos\\PretparkDH\\src\\src.csproj": {
+    "c:\\repos\\PretparkDH\\src\\src.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\PretparkDH\\src\\src.csproj",
+        "projectUniqueName": "c:\\repos\\PretparkDH\\src\\src.csproj",
         "projectName": "src",
-        "projectPath": "C:\\repos\\PretparkDH\\src\\src.csproj",
-        "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\PretparkDH\\src\\obj\\",
+        "projectPath": "c:\\repos\\PretparkDH\\src\\src.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "c:\\repos\\PretparkDH\\src\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
