@@ -1,9 +1,9 @@
 
 namespace Authenticatie
 {
-    class EmailService : IEmailService
+    static class EmailService
     {
-        public void Verstuur(string email, string text)
+        public static void Verstuur(string email, string text)
         {
             Console.WriteLine("Verstuur email naar " + email + " met tekst:\n" + text);
         }
