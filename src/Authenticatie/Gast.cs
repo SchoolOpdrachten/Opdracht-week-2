@@ -3,7 +3,7 @@ namespace Authenticatie
 {
     class Gast : Gebruiker
     {
-        public Gast(string email, string wachtwoord, string naam) : base(email, wachtwoord, naam)
+        public Gast(string mail, string ww, string naam, VerificatieToken t) : base(mail, ww, naam, t)
         {
         }
 
@@ -22,6 +22,7 @@ namespace Authenticatie
         public void GeefStraf(string daden)
         {
             Console.WriteLine("Geef een straf voor " + daden);
+            Boete += 100;
         }
     }
 }

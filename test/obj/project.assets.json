@@ -3984,7 +3984,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\USER\\.nuget\\packages\\": {}
+    "C:\\Users\\peter\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -3992,11 +3992,11 @@
       "projectUniqueName": "c:\\repos\\PretparkDH\\test\\test.csproj",
       "projectName": "test",
       "projectPath": "c:\\repos\\PretparkDH\\test\\test.csproj",
-      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
       "outputPath": "c:\\repos\\PretparkDH\\test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
