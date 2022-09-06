@@ -29,7 +29,6 @@ class PretparkDH
     }
     public static void AuthenticatieOpdr()
     {
-        List<Gebruiker> gebruikers = new List<Gebruiker>();
 
         for (int i = 0; i < 2; i++)
         {
@@ -41,18 +40,19 @@ class PretparkDH
             Console.WriteLine("Voer uw naam in:");
             string naam = Console.ReadLine();
             Console.WriteLine("\n");
-            Gebruiker gebruiker = GebruikerService.Registreer("peter@mail.com", "123", "peter");
-            gebruikers.Add(gebruiker);
+            Gebruiker gebruiker = GebruikerService.Registreer(email, wachtwoord, naam);
             Console.ReadKey();
             Console.WriteLine("\n\n");
         }
 
-        Console.WriteLine("verifieer account van "+ gebruikers[0].Email);
-        Console.WriteLine("token input = "+ gebruikers[0].VerificatieToken.Token);
-        GebruikerService.Verifieer(gebruikers[0].Email, gebruikers[0].VerificatieToken.Token);
+        var g = GebruikerContext.Gebruikers[0];
+        Console.WriteLine("verifieer account van "+ g.Email);
+        Console.WriteLine("token input = "+ g.VerificatieToken.Token);
+        GebruikerService.Verifieer(g.Email, g.VerificatieToken.Token);
+        Console.ReadKey();
 
         // login gebruiker
-        foreach (Gebruiker gebruiker in gebruikers)
+        foreach (Gebruiker gebruiker in GebruikerContext.Gebruikers)
         {
             Console.WriteLine("\n\nlogin " + gebruiker.Naam);
             Console.WriteLine("email: "+ gebruiker.Email);

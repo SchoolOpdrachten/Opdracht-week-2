@@ -5,7 +5,7 @@ namespace Authenticatie
     {
         public static List<Gebruiker> Gebruikers { get; set; } = new List<Gebruiker>();
 
-    public static Gebruiker GetGebruiker(string email)
+        public static Gebruiker GetGebruiker(string email)
         {
             return Gebruikers.Find(g => g.Email == email);
         }
