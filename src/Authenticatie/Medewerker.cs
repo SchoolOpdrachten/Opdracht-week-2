@@ -1,7 +1,7 @@
 
 namespace Authenticatie
 {
-    class Medewerker : Gebruiker
+    public class Medewerker : Gebruiker
     {
         public Medewerker(string mail, string ww, string naam, VerificatieToken t) : base(mail, ww, naam, t)
         {

@@ -1,9 +1,25 @@
 
 namespace Authenticatie
 {
-    static class GebruikerService
+    public interface IGebruikerService
     {
-        public static Gebruiker Registreer(string email, string wachtwoord, string naam)
+        Gebruiker Registreer(string email, string wachtwoord, string naam);
+        bool Login(string email, string wachtwoord);
+        bool Verifieer(string email, string token);
+    }
+
+    public class GebruikerService : IGebruikerService
+    {
+        public IEmailService EmailService { get; set; }
+        public GebruikerContext GebruikerContext { get; set; }
+
+        public GebruikerService(IEmailService e, GebruikerContext c)
+        {
+            EmailService = e;
+            GebruikerContext = c;
+        }
+        
+        public Gebruiker Registreer(string email, string wachtwoord, string naam)
         {
             Console.WriteLine("Registreer een gebruiker");                          // TODO: remove
             VerificatieToken token = new VerificatieToken(Guid.NewGuid().ToString(), DateTime.Now.AddDays(3));
@@ -19,7 +35,7 @@ namespace Authenticatie
             GebruikerContext.AddGebruiker(gebruiker);
             return gebruiker;
         }
-        public static bool Login(string email, string wachtwoord)
+        public bool Login(string email, string wachtwoord)
         {
             foreach (Gebruiker gebruiker in GebruikerContext.Gebruikers)
             {
@@ -31,7 +47,7 @@ namespace Authenticatie
             }
             return false;
         }
-        public static bool Verifieer(string email, string token)
+        public bool Verifieer(string email, string token)
         {
             Gebruiker gebruiker = GebruikerContext.GetGebruiker(email);
             if (gebruiker == null) return false;
