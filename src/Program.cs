@@ -43,7 +43,7 @@ class PretparkDH
             Console.WriteLine("Voer uw naam in:");
             string naam = Console.ReadLine();
             Console.WriteLine("\n");
-            Gebruiker gebruiker = GebruikerService.Registreer(email, wachtwoord, naam);
+            GebruikerService.Registreer(email, wachtwoord, naam);
             Console.ReadKey();
             Console.WriteLine("\n\n");
         }

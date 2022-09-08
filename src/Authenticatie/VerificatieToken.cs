@@ -11,5 +11,15 @@ namespace Authenticatie
             Token = token;
             VerloopDatum = verloopDatum;
         }
+        
+        public bool Verifieer(string token)
+        {
+            if (Token == null || (Token == token && VerloopDatum <= DateTime.Now))
+            {
+                Console.WriteLine("verificatie voltooid");          // TODO: remove
+                return true;
+            }
+            else return false;
+        }
     }
 }
