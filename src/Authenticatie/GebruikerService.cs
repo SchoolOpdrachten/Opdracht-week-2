@@ -55,8 +55,13 @@ namespace Authenticatie
         {
             Gebruiker gebruiker = GebruikerContext.GetGebruiker(email);
             if (gebruiker == null) return false;
-
-            return gebruiker.VerificatieToken.Verifieer(token);
+            
+            if( gebruiker.VerificatieToken.Verifieer(token)) 
+            {
+                gebruiker.VerificatieToken = null;
+                return true;
+            }
+            return false;
         }
     }
 }

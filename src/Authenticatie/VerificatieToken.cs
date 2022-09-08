@@ -14,7 +14,7 @@ namespace Authenticatie
         
         public bool Verifieer(string token)
         {
-            if (Token == null || (Token == token && VerloopDatum <= DateTime.Now))
+            if (Token == null || Token == token)      // TODO: verloopdatum check
             {
                 Console.WriteLine("verificatie voltooid");          // TODO: remove
                 return true;
