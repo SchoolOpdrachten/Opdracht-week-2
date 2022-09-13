@@ -1,0 +1,15 @@
+C:\repos\PretparkDH\asyncBoek\bin\Debug\net6.0\asyncBoek.exe
+C:\repos\PretparkDH\asyncBoek\bin\Debug\net6.0\asyncBoek.deps.json
+C:\repos\PretparkDH\asyncBoek\bin\Debug\net6.0\asyncBoek.runtimeconfig.json
+C:\repos\PretparkDH\asyncBoek\bin\Debug\net6.0\asyncBoek.dll
+C:\repos\PretparkDH\asyncBoek\bin\Debug\net6.0\asyncBoek.pdb
+C:\repos\PretparkDH\asyncBoek\obj\Debug\net6.0\asyncBoek.csproj.AssemblyReference.cache
+C:\repos\PretparkDH\asyncBoek\obj\Debug\net6.0\asyncBoek.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\PretparkDH\asyncBoek\obj\Debug\net6.0\asyncBoek.AssemblyInfoInputs.cache
+C:\repos\PretparkDH\asyncBoek\obj\Debug\net6.0\asyncBoek.AssemblyInfo.cs
+C:\repos\PretparkDH\asyncBoek\obj\Debug\net6.0\asyncBoek.csproj.CoreCompileInputs.cache
+C:\repos\PretparkDH\asyncBoek\obj\Debug\net6.0\asyncBoek.dll
+C:\repos\PretparkDH\asyncBoek\obj\Debug\net6.0\refint\asyncBoek.dll
+C:\repos\PretparkDH\asyncBoek\obj\Debug\net6.0\asyncBoek.pdb
+C:\repos\PretparkDH\asyncBoek\obj\Debug\net6.0\asyncBoek.genruntimeconfig.cache
+C:\repos\PretparkDH\asyncBoek\obj\Debug\net6.0\ref\asyncBoek.dll
