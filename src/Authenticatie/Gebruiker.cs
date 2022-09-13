@@ -1,7 +1,7 @@
 
 namespace Authenticatie
 {
-    abstract class Gebruiker
+    public abstract class Gebruiker
     {
         public string Email { get; set; }
         public string Wachtwoord { get; set; }

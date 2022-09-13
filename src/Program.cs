@@ -29,6 +29,9 @@ class PretparkDH
     }
     public static void AuthenticatieOpdr()
     {
+        IEmailService EmailService = new EmailService();
+        GebruikerContext GebruikerContext = new GebruikerContext();
+        IGebruikerService GebruikerService = new GebruikerService(EmailService, GebruikerContext);
 
         for (int i = 0; i < 2; i++)
         {
@@ -40,7 +43,7 @@ class PretparkDH
             Console.WriteLine("Voer uw naam in:");
             string naam = Console.ReadLine();
             Console.WriteLine("\n");
-            Gebruiker gebruiker = GebruikerService.Registreer(email, wachtwoord, naam);
+            GebruikerService.Registreer(email, wachtwoord, naam);
             Console.ReadKey();
             Console.WriteLine("\n\n");
         }
@@ -60,5 +63,7 @@ class PretparkDH
             Console.WriteLine(GebruikerService.Login(gebruiker.Email, gebruiker.Wachtwoord));
             Console.ReadKey();
         }
+
+        // show all gebruikers
     }
 }
