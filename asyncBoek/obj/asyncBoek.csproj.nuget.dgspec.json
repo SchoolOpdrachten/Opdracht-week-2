@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\repos\\PretparkDH\\src\\src.csproj": {}
+    "C:\\repos\\PretparkDH\\asyncBoek\\asyncBoek.csproj": {}
   },
   "projects": {
-    "c:\\repos\\PretparkDH\\src\\src.csproj": {
+    "C:\\repos\\PretparkDH\\asyncBoek\\asyncBoek.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\repos\\PretparkDH\\src\\src.csproj",
-        "projectName": "src",
-        "projectPath": "c:\\repos\\PretparkDH\\src\\src.csproj",
+        "projectUniqueName": "C:\\repos\\PretparkDH\\asyncBoek\\asyncBoek.csproj",
+        "projectName": "asyncBoek",
+        "projectPath": "C:\\repos\\PretparkDH\\asyncBoek\\asyncBoek.csproj",
         "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-        "outputPath": "c:\\repos\\PretparkDH\\src\\obj\\",
+        "outputPath": "C:\\repos\\PretparkDH\\asyncBoek\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config"
