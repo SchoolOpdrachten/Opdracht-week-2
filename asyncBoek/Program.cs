@@ -8,16 +8,13 @@ namespace AsyncBoek
     {
         public string Titel { get; set; }
         public string Auteur { get; set; }
-        public float AIScore {
-            get {
-                // Deze 'berekening' is eigenlijk een ingewikkeld AI algoritme.
-                // Pas de volgende vier regels niet aan.
-                double ret = 1.0f;
-                for (int i = 0; i < 10000000; i++)
-                    for (int j = 0; j < 10; j++)
-                        ret = (ret + Willekeurig.Random.NextDouble()) % 1.0;
-                return (float)ret;
-            }
+        public async Task<float> AIScore()
+        {
+            double ret = 1.0f;
+            for (int i = 0; i < 10000000; i++)
+                for (int j = 0; j < 10; j++)
+                    ret = (ret + Willekeurig.Random.NextDouble()) % 1.0;
+            return (float)ret;
         }
     }
     static class Willekeurig
@@ -28,10 +25,11 @@ namespace AsyncBoek
             await Task.Delay(Random.Next(MinAantalMs, MaxAantalMs));
         }
     }
+
     static class Database
     {
         private static List<Boek> lijst = new List<Boek>();
-        public static async void VoegToe(Boek b)
+        public static async Task VoegToe(Boek b)
         {
             await Willekeurig.Vertraging(); // INSERT INTO ...
             lijst.Add(b);
@@ -41,39 +39,58 @@ namespace AsyncBoek
             await Willekeurig.Vertraging(); // SELECT * FROM ...
             return lijst;
         }
-        public static async void Logboek(string melding)
+        public static async Task Logboek(string melding)
         {
             await Willekeurig.Vertraging(); // schrijf naar logbestand
         }
     }
+
     class Program
     {
-        static async Task VoegBoekToe() {
+        static async Task VoegBoekToe()
+        {
             Console.WriteLine("Geef de titel op: ");
             var titel = Console.ReadLine();
+
             Console.WriteLine("Geef de auteur op: ");
             var auteur = Console.ReadLine();
-            Database.VoegToe(new Boek {Titel = titel, Auteur = auteur});
+
+            Database.VoegToe(new Boek { Titel = titel, Auteur = auteur });
             Database.Logboek("Er is een nieuw boek!");
             Console.WriteLine("De huidige lijst met boeken is: ");
-            foreach (var boek in await Database.HaalLijstOp()) {
+
+            foreach (var boek in await Database.HaalLijstOp())
+            {
                 Console.WriteLine(boek.Titel);
             }
         }
-        static async Task ZoekBoek() {
+
+        static async Task ZoekBoek()                    // deze methode is door mij aangepast om nog sneller te werken
+        {
             Console.WriteLine("Waar gaat het boek over?");
             var beschrijving = Console.ReadLine();
+            var boeken = await Database.HaalLijstOp();
+
+            // maken en uitvoeren van tasks
+            var boekscorenTask = new List<Task<float>>();
+            foreach (var boek in boeken){
+                boekscorenTask.Add(Task.Run(() => boek.AIScore()));
+            }
+
             Boek beste = null;
-            foreach (var boek in await Database.HaalLijstOp())
-                if (beste == null || boek.AIScore > beste.AIScore)
-                    beste = boek;
+            for (int i = 0; i < boeken.Count; i++)
+                if (beste == null || await boekscorenTask[i] > await beste.AIScore())
+                    beste = boeken[i];
+
             Console.WriteLine("Het boek dat het beste overeenkomt met de beschrijving is: ");
             Console.WriteLine(beste.Titel);
         }
+
         static bool Backupping = false;
         // "Backup" kan lang duren. We willen dat de gebruiker niet hoeft te wachten,
         // en direct daarna boeken kan toevoegen en zoeken.
-        static async Task Backup() {
+        static async Task Backup()
+        {
             if (Backupping)
                 return;
             Backupping = true;
@@ -85,12 +102,15 @@ namespace AsyncBoek
         {
             Console.WriteLine("Welkom bij de boeken administratie!");
             string key = null;
-            while (key != "q") {
+            while (key != "q")
+            {
                 Console.WriteLine("+) Boek toevoegen");
                 Console.WriteLine("z) Boek zoeken");
                 Console.WriteLine("b) Backup maken van de boeken");
                 Console.WriteLine("q) Quit");
+
                 key = Console.ReadLine();
+
                 if (key == "+")
                     VoegBoekToe();
                 else if (key == "z")
