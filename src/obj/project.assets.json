@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\repos\\PretparkDH\\src\\src.csproj",
+      "projectUniqueName": "C:\\repos\\WPFW projects\\Opdracht-week-2\\src\\src.csproj",
       "projectName": "src",
-      "projectPath": "c:\\repos\\PretparkDH\\src\\src.csproj",
+      "projectPath": "C:\\repos\\WPFW projects\\Opdracht-week-2\\src\\src.csproj",
       "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-      "outputPath": "c:\\repos\\PretparkDH\\src\\obj\\",
+      "outputPath": "C:\\repos\\WPFW projects\\Opdracht-week-2\\src\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config"
